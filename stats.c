@@ -31,6 +31,7 @@
  */
 
 #include <stdio.h>
+#include <stdbool.h>
 #include "stats.h"
 
 /* Size of the Data Set */
@@ -59,7 +60,7 @@ void print_statistics(uchar med, uchar mean, uchar min, uchar max)
 {
   // Implementation goes here
 
-  printf("Median: %d\nMean: %d\nMinimum: %d\nMaximum: %d", med, mean, min, max);
+  printf("\nMedian: %d\nMean: %d\nMinimum: %d\nMaximum: %d\n", med, mean, min, max);
 
 }
 
@@ -72,6 +73,20 @@ uchar find_median(uchar *pdata, uchar len)
 {
   // Implementation goes here
 
+  uchar medianArray[len];
+
+  for(uchar i = 0; i < len; i++)
+  {
+    medianArray[i] = *(pdata+i);
+  }
+
+  sort_array(medianArray, len);
+
+  //for(uchar i = 0; i < len; i++)
+  //{
+  //  printf("\n%d",medianArray[i]);
+  //}
+
   char middle;
 
   if(len % 2 == 0)
@@ -83,9 +98,7 @@ uchar find_median(uchar *pdata, uchar len)
     middle = (len + 1) / 2;
   }
 
-  pdata += middle;
-
-  return *pdata;
+  return medianArray[middle];
 }
 
 uchar find_mean(uchar *pdata, uchar len)
@@ -106,5 +119,27 @@ uchar find_minimum(uchar *pdata, uchar len)
 void sort_array(uchar *pdata, uchar len)
 {
   // Implemetation goes here
+
+  uchar buffer;
+  bool swapFlag = true;
+
+  while(swapFlag == true)
+  {
+    swapFlag = false;
+    for(uchar i = 0; i < len - 1; i++) // 'len' in the conditional expression is offset by 1 so that we do not index outside of the array.
+    {
+      uchar *pCurrent = pdata + i;
+      uchar *pNext = pdata + i + 1;
+
+      if(*pCurrent > *pNext)
+      {
+          swapFlag = true;
+          buffer = *pCurrent;
+          *pCurrent = *pNext;
+          *pNext = buffer;
+      }
+    }
+  }
+
 }
 
