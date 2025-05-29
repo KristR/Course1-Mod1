@@ -2,24 +2,33 @@
  * Copyright (C) 2017 by Alex Fosdick - University of Colorado
  *
  * Redistribution, modification or use of this software in source or binary
- * forms is permitted as long as the files maintain this copyright. Users are 
+ * forms is permitted as long as the files maintain this copyright. Users are
  * permitted to modify this and use it to learn about the field of embedded
  * software. Alex Fosdick and the University of Colorado are not liable for any
- * misuse of this material. 
+ * misuse of this material.
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file stats.c
+ * @brief Processes and displays statistics on an array of numbers.
  *
- * <Add Extended Description Here>
+ * Given an array of unsigned 8-bit integers, this program calculates the
+ * median, mean, maximum and minimum value of the array before sorting the
+ * array into a descending order and displaying the results in the terminal.
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * This file contains the definition and use of the following functions:
+ * - print_statistics()
+ * - print_array()
+ * - find_median()
+ * - find_mean()
+ * - find_maximum()
+ * - find_minimum()
+ * - sort_array()
+ *
+ * @author Kristaps Ruments
+ * @date 27/05/2025
  *
  */
-
-
 
 #include <stdio.h>
 #include "stats.h"
@@ -38,6 +47,44 @@ void main() {
   /* Other Variable Declarations Go Here */
   /* Statistics and Printing Functions Go Here */
 
+
+
 }
 
 /* Add other Implementation File Code Here */
+
+void print_statistics(uchar *pdata, uchar len)
+{
+  // Implementation goes here
+}
+
+void print_array(uchar *pdata, uchar len)
+{
+  // Implementation goes here
+}
+
+uchar find_median(uchar *pdata, uchar len)
+{
+  // Implementation goes here
+}
+
+uchar find_mean(uchar *pdata, uchar len)
+{
+  // Implementation goes here
+}
+
+uchar find_maximum(uchar *pdata, uchar len)
+{
+  // Implementation goes here
+}
+
+uchar find_minimum(uchar *pdata, uchar len)
+{
+  // Implementation goes here
+}
+
+void sort_array(uchar *pdata, uchar len)
+{
+  // Implemetation goes here
+}
+

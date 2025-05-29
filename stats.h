@@ -2,39 +2,127 @@
  * Copyright (C) 2017 by Alex Fosdick - University of Colorado
  *
  * Redistribution, modification or use of this software in source or binary
- * forms is permitted as long as the files maintain this copyright. Users are 
+ * forms is permitted as long as the files maintain this copyright. Users are
  * permitted to modify this and use it to learn about the field of embedded
  * software. Alex Fosdick and the University of Colorado are not liable for any
- * misuse of this material. 
+ * misuse of this material.
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file stats.h
+ * @brief Header file for stats.c containing function prototypes and documentation.
  *
- * <Add Extended Description Here>
+ * This file contains the declaration and documentation of the following functions:
+ * - print_statistics()
+ * - print_array()
+ * - find_median()
+ * - find_mean()
+ * - find_maximum()
+ * - find_minimum()
+ * - sort_array()
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author Kristaps Ruments
+ * @date 27/05/2025
  *
  */
 #ifndef __STATS_H__
 #define __STATS_H__
 
-/* Add Your Declarations and Function Comments here */ 
+/* Add Your Declarations and Function Comments here */
+
+typedef unsigned char uchar;
 
 /**
- * @brief <Add Brief Description of Function Here>
+ * @brief Prints statistics of a given array to the terminal.
  *
- * <Add Extended Description Here>
+ * A function that prints the statistics of an array including minimum,
+ * maximum, mean and median.
  *
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
+ * @param pdata Pointer to the first element of an array.
+ * @param len Length of the array.
  *
- * @return <Add Return Informaiton here>
+ * @return void - no data to return, only terminal output.
  */
+void print_statistics(uchar *pdata, uchar len);
 
+/**
+ * @brief Prints a given array to the terminal.
+ *
+ * Given a pointer to array's first element and the array length,
+ * the array is displayed in the terminal.
+ *
+ * @param pdata Pointer to the first element of an array.
+ * @param len Length of the array.
+ *
+ * @return void - no data to return, only terminal output.
+ */
+void print_array(uchar *pdata, uchar len);
+
+/**
+ * @brief Returns the median value of a given array.
+ *
+ * Given a pointer to the array's first element and the array length,
+ * the array's median value is calculated and returned.
+ *
+ * @param pdata Pointer to the first element of an array.
+ * @param len Length of the array.
+ *
+ * @return Unsigned character (8-bit)
+ */
+uchar find_median(uchar *pdata, uchar len);
+
+/**
+ * @brief Returns the mean value of a given array.
+ *
+ * Given a pointer to the array's first element and the array lenght,
+ * the array's mean value is calculated and returned.
+ *
+ * @param pdata Pointer to the first element of an array.
+ * @param len Length of the array.
+ *
+ * @return Unsigned character (8-bit)
+ */
+uchar find_mean(uchar *pdata, uchar len);
+
+/**
+ * @brief Returns the maximum value of a given array.
+ *
+ * Given a pointer to the array's first element and the array lenght,
+ * the array's maximum value is calculated and returned.
+ *
+ * @param pdata Pointer to the first element of an array.
+ * @param len Length of the array.
+ *
+ * @return Unsigned character (8-bit)
+ */
+uchar find_maximum(uchar *pdata, uchar len);
+
+/**
+ * @brief Returns the minimum value of a given array.
+ *
+ * Given a pointer to the array's first element and the array lenght,
+ * the array's minimum value is calculated and returned.
+ *
+ * @param pdata Pointer to the first element of an array.
+ * @param len Length of the array.
+ *
+ * @return Unsigned character (8-bit)
+ */
+uchar find_minimum(uchar *pdata, uchar len);
+
+/**
+ * @brief Sorts a given array into descending order.
+ *
+ * Given a pointer to the array's first element and the array lenght,
+ * the array is sorted into descending order (The zeroth element being
+ * the largest value, and the last element (n-1) being the smallest
+ * value. )
+ *
+ * @param pdata Pointer to the first element of an array.
+ * @param len Length of the array.
+ *
+ * @return void - the array is sorted in its existing address.
+ */
+void sort_array(uchar *pdata, uchar len);
 
 #endif /* __STATS_H__ */
