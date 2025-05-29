@@ -53,7 +53,7 @@ void main() {
 
 /* Add other Implementation File Code Here */
 
-void print_statistics(uchar *pdata, uchar len)
+void print_statistics(uchar med, uchar mean, uchar min, uchar max)
 {
   // Implementation goes here
 }

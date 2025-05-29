@@ -12,4 +12,6 @@ Executing the compiled product of the 'stats.c' file will result in the followin
  - Mean
  - Maximum value
  - Minimum value
+
+
 Lastly, the dataset will also be sorted in a descending order and displayed.

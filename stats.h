@@ -33,17 +33,18 @@
 typedef unsigned char uchar;
 
 /**
- * @brief Prints statistics of a given array to the terminal.
+ * @brief Prints given statistics to the terminal.
  *
- * A function that prints the statistics of an array including minimum,
- * maximum, mean and median.
+ * Outputs the given integer arguments to console.
  *
- * @param pdata Pointer to the first element of an array.
- * @param len Length of the array.
+ * @param med Unsigned 8-bit value - median value statistic.
+ * @param mean Unsigned 8-bit value - mean value statistic.
+ * @param min Unsigned 8-bit value - minimum value statistic.
+ * @param max Unsigned 8-bit value - maximum value statistic.
  *
  * @return void - no data to return, only terminal output.
  */
-void print_statistics(uchar *pdata, uchar len);
+void print_statistics(uchar med, uchar mean, uchar min, uchar max);
 
 /**
  * @brief Prints a given array to the terminal.
@@ -52,7 +53,7 @@ void print_statistics(uchar *pdata, uchar len);
  * the array is displayed in the terminal.
  *
  * @param pdata Pointer to the first element of an array.
- * @param len Length of the array.
+ * @param len Unsigned 8-bit value - length of the array.
  *
  * @return void - no data to return, only terminal output.
  */
@@ -65,7 +66,7 @@ void print_array(uchar *pdata, uchar len);
  * the array's median value is calculated and returned.
  *
  * @param pdata Pointer to the first element of an array.
- * @param len Length of the array.
+ * @param len Unsigned 8-bit value - length of the array.
  *
  * @return Unsigned character (8-bit)
  */
@@ -78,7 +79,7 @@ uchar find_median(uchar *pdata, uchar len);
  * the array's mean value is calculated and returned.
  *
  * @param pdata Pointer to the first element of an array.
- * @param len Length of the array.
+ * @param len Unsigned 8-bit value - length of the array.
  *
  * @return Unsigned character (8-bit)
  */
@@ -91,7 +92,7 @@ uchar find_mean(uchar *pdata, uchar len);
  * the array's maximum value is calculated and returned.
  *
  * @param pdata Pointer to the first element of an array.
- * @param len Length of the array.
+ * @param len Unsigned 8-bit value - length of the array.
  *
  * @return Unsigned character (8-bit)
  */
@@ -104,7 +105,7 @@ uchar find_maximum(uchar *pdata, uchar len);
  * the array's minimum value is calculated and returned.
  *
  * @param pdata Pointer to the first element of an array.
- * @param len Length of the array.
+ * @param len Unsigned 8-bit value - length of the array.
  *
  * @return Unsigned character (8-bit)
  */
@@ -119,9 +120,9 @@ uchar find_minimum(uchar *pdata, uchar len);
  * value. )
  *
  * @param pdata Pointer to the first element of an array.
- * @param len Length of the array.
+ * @param len Unsigned 8-bit value - length of the array.
  *
- * @return void - the array is sorted in its existing address.
+ * @return void - the array is sorted in its existing address range.
  */
 void sort_array(uchar *pdata, uchar len);
 
