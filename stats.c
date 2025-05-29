@@ -47,7 +47,9 @@ void main() {
   /* Other Variable Declarations Go Here */
   /* Statistics and Printing Functions Go Here */
 
+  uchar median = find_median(test, SIZE);
 
+  print_statistics(median, 0, 0, 0);
 
 }
 
@@ -56,6 +58,9 @@ void main() {
 void print_statistics(uchar med, uchar mean, uchar min, uchar max)
 {
   // Implementation goes here
+
+  printf("Median: %d\nMean: %d\nMinimum: %d\nMaximum: %d", med, mean, min, max);
+
 }
 
 void print_array(uchar *pdata, uchar len)
@@ -66,6 +71,21 @@ void print_array(uchar *pdata, uchar len)
 uchar find_median(uchar *pdata, uchar len)
 {
   // Implementation goes here
+
+  char middle;
+
+  if(len % 2 == 0)
+  {
+    middle = len / 2;
+  }
+  else
+  {
+    middle = (len + 1) / 2;
+  }
+
+  pdata += middle;
+
+  return *pdata;
 }
 
 uchar find_mean(uchar *pdata, uchar len)
