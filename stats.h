@@ -31,6 +31,7 @@
 /* Add Your Declarations and Function Comments here */
 
 typedef unsigned char uchar;
+typedef unsigned int  uint;
 
 /**
  * @brief Prints given statistics to the terminal.
@@ -54,11 +55,11 @@ void print_statistics(uchar med, uchar mean, uchar min, uchar max);
  * and formatted in four columns.
  *
  * @param pdata Pointer to the first element of an array.
- * @param len Unsigned 8-bit value - length of the array.
+ * @param len Unsigned integer value - length of the array.
  *
  * @return void - no data to return, only terminal output.
  */
-void print_array(uchar *pdata, uchar len);
+void print_array(uchar *pdata, uint len);
 
 /**
  * @brief Returns the median value of a given array.
@@ -67,11 +68,11 @@ void print_array(uchar *pdata, uchar len);
  * the array's median value is calculated and returned.
  *
  * @param pdata Pointer to the first element of an array.
- * @param len Unsigned 8-bit value - length of the array.
+ * @param len Unsigned integer value - length of the array.
  *
  * @return Unsigned character (8-bit)
  */
-uchar find_median(uchar *pdata, uchar len);
+uchar find_median(uchar *pdata, uint len);
 
 /**
  * @brief Returns the mean value of a given array.
@@ -80,11 +81,11 @@ uchar find_median(uchar *pdata, uchar len);
  * the array's mean value is calculated and returned.
  *
  * @param pdata Pointer to the first element of an array.
- * @param len Unsigned 8-bit value - length of the array.
+ * @param len Unsigned integer value - length of the array.
  *
  * @return Unsigned character (8-bit)
  */
-uchar find_mean(uchar *pdata, uchar len);
+uchar find_mean(uchar *pdata, uint len);
 
 /**
  * @brief Returns the maximum value of a given array.
@@ -93,11 +94,11 @@ uchar find_mean(uchar *pdata, uchar len);
  * the array's maximum value is calculated and returned.
  *
  * @param pdata Pointer to the first element of an array.
- * @param len Unsigned 8-bit value - length of the array.
+ * @param len Unsigned integer value - length of the array.
  *
  * @return Unsigned character (8-bit)
  */
-uchar find_maximum(uchar *pdata, uchar len);
+uchar find_maximum(uchar *pdata, uint len);
 
 /**
  * @brief Returns the minimum value of a given array.
@@ -106,11 +107,11 @@ uchar find_maximum(uchar *pdata, uchar len);
  * the array's minimum value is calculated and returned.
  *
  * @param pdata Pointer to the first element of an array.
- * @param len Unsigned 8-bit value - length of the array.
+ * @param len Unsigned integer value - length of the array.
  *
  * @return Unsigned character (8-bit)
  */
-uchar find_minimum(uchar *pdata, uchar len);
+uchar find_minimum(uchar *pdata, uint len);
 
 /**
  * @brief Sorts a given array into descending order.
@@ -119,10 +120,10 @@ uchar find_minimum(uchar *pdata, uchar len);
  * the array is sorted into descending order using 'bubble sort' algorithm.  
  *
  * @param pdata Pointer to the first element of an array.
- * @param len Unsigned 8-bit value - length of the array.
+ * @param len Unsigned integer value - length of the array.
  *
  * @return void - the array is sorted in its existing address range.
  */
-void sort_array(uchar *pdata, uchar len);
+void sort_array(uchar *pdata, uint len);
 
 #endif /* __STATS_H__ */

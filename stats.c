@@ -73,7 +73,7 @@ void print_statistics(uchar med, uchar mean, uchar min, uchar max)
          "Median: %d\nMean: %d\nMinimum: %d\nMaximum: %d\n", med, mean, min, max);
 }
 
-void print_array(uchar *pdata, uchar len)
+void print_array(uchar *pdata, uint len)
 {
 	if( (pdata != NULL) &&
 	    (len > 0) )
@@ -100,7 +100,7 @@ void print_array(uchar *pdata, uchar len)
 	}
 }
 
-uchar find_median(uchar *pdata, uchar len)
+uchar find_median(uchar *pdata, uint len)
 {
 	if( (pdata != NULL) &&
 	    (len > 0) )
@@ -129,7 +129,7 @@ uchar find_median(uchar *pdata, uchar len)
 	}
 }
 
-uchar find_mean(uchar *pdata, uchar len)
+uchar find_mean(uchar *pdata, uint len)
 {
 	if( (pdata != NULL) &&
 	    (len > 0) )
@@ -145,7 +145,7 @@ uchar find_mean(uchar *pdata, uchar len)
 	}
 }
 
-uchar find_maximum(uchar *pdata, uchar len)
+uchar find_maximum(uchar *pdata, uint len)
 {
 	if( (pdata != NULL) &&
 	    (len > 0) )
@@ -164,7 +164,7 @@ uchar find_maximum(uchar *pdata, uchar len)
 	}
 }
 
-uchar find_minimum(uchar *pdata, uchar len)
+uchar find_minimum(uchar *pdata, uint len)
 {
 	if( (pdata != NULL) &&
 	    (len > 0) )
@@ -183,7 +183,7 @@ uchar find_minimum(uchar *pdata, uchar len)
 	}
 }
 
-void sort_array(uchar *pdata, uchar len)
+void sort_array(uchar *pdata, uint len)
 {
 	if( (pdata != NULL) &&
 	    (len > 0) )
