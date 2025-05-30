@@ -69,134 +69,147 @@ void main() {
 
 void print_statistics(uchar med, uchar mean, uchar min, uchar max)
 {
-  // Implementation goes here
-
   printf("\n==== Dataset statistics ====\n"
          "Median: %d\nMean: %d\nMinimum: %d\nMaximum: %d\n", med, mean, min, max);
-
 }
 
 void print_array(uchar *pdata, uchar len)
 {
-  // Implementation goes here
+	if( (pdata != NULL) &&
+	    (len > 0) )
+	{
+	  for( uchar index = 0; index < len; index++ )
+	  {
+	    if( (index == 0) ||
+	        (index % 4 == 0) )
+	    {
+	      printf("%d) %d", index + 1, *(pdata + index));
+	    }
+	    else
+	    {
+	      printf("\t\t%d) %d", index + 1, *(pdata + index));
+	    }
 
-  
-  for(uchar i = 0; i < len; i++)
-  {
-    if( (i == 0) ||
-        (i % 4 == 0) )
-    {
-      printf("%d) %d", i+1, *(pdata+i));
-    }
-    else
-    {
-      printf("\t\t%d) %d", i+1, *(pdata+i));
-    }
+	    if( (index + 1) % 4 == 0 )
+	    {
+	      printf("\n");
+	    }
+	  }
 
-    if((i + 1) % 4 == 0)
-    {
-      printf("\n");
-    }
-  }
-
-  printf("\n");
+	  printf("\n");
+	}
 }
 
 uchar find_median(uchar *pdata, uchar len)
 {
-  // Implementation goes here
+	if( (pdata != NULL) &&
+	    (len > 0) )
+	{
+	  uchar medianArray[len];
 
-  uchar medianArray[len];
+	  for( uchar index = 0; index < len; index++ )
+	  {
+	    medianArray[index] = *(pdata + index);
+	  }
 
-  for(uchar i = 0; i < len; i++)
-  {
-    medianArray[i] = *(pdata+i);
-  }
+	  sort_array(medianArray, len);
 
-  sort_array(medianArray, len);
+	  uchar middle;
 
-  char middle;
+	  if( len % 2 == 0 )
+	  {
+	    middle = len / 2;
+	  }
+	  else
+	  {
+	    middle = (len + 1) / 2;
+	  }
 
-  if(len % 2 == 0)
-  {
-    middle = len / 2;
-  }
-  else
-  {
-    middle = (len + 1) / 2;
-  }
-
-  return medianArray[middle];
+	  return medianArray[middle];
+	}
 }
 
 uchar find_mean(uchar *pdata, uchar len)
 {
-  // Implementation goes here
-  uchar result;
+	if( (pdata != NULL) &&
+	    (len > 0) )
+	{
+	  uchar result;
 
-  for(uchar i = 0; i < len; i++)
-  {
-    result += *(pdata+i);
-  }
+	  for( uchar index = 0; index < len; index++ )
+	  {
+	    result += *(pdata + index);
+	  }
 
-  return result / len;
+	  return result / len;
+	}
 }
 
 uchar find_maximum(uchar *pdata, uchar len)
 {
-  // Implementation goes here
-  uchar result = 0;
+	if( (pdata != NULL) &&
+	    (len > 0) )
+	{
+	  uchar result = 0;
 
-  for(uchar i = 0; i < len; i++)
-  {
-    if(*(pdata+i) > result)
-    {
-      result = *(pdata+i);
-    }
-  }
+	  for( uchar index = 0; index < len; index++ )
+	  {
+	    if( *(pdata + index) > result )
+	    {
+	      result = *(pdata + index);
+	    }
+	  }
 
-  return result;
+	  return result;
+	}
 }
 
 uchar find_minimum(uchar *pdata, uchar len)
 {
-  // Implementation goes here
-  uchar result = *pdata; // Take the first array element for comparison
+	if( (pdata != NULL) &&
+	    (len > 0) )
+	{
+	  uchar result = *pdata; // Take the first array element for comparison
 
-  for(uchar i = 0; i < len; i++)
-  {
-    if(*(pdata+i) < result)
-    {
-      result = *(pdata+i);
-    }
-  }
+	  for( uchar index = 0; index < len; index++ )
+	  {
+	    if( *(pdata + index) < result )
+	    {
+	      result = *(pdata + index);
+	    }
+	  }
 
-  return result;
+	  return result;
+	}
 }
 
 void sort_array(uchar *pdata, uchar len)
 {
-  // Implemetation goes here
+	if( (pdata != NULL) &&
+	    (len > 0) )
+	{
+	  uchar buffer;
+	  bool swapFlag = true;
 
-  uchar buffer;
-  bool swapFlag = true;
+	  while( swapFlag == true )
+	  {
+	    swapFlag = false;
 
-  while(swapFlag == true)
-  {
-    swapFlag = false;
-    for(uchar i = 0; i < len - 1; i++) // 'len' in the conditional expression is offset by 1 so that we do not index outside of the array.
-    {
-      uchar *pCurrent = pdata + i;
-      uchar *pNext = pdata + i + 1;
+	    /* Parameter 'len' in the conditional expression is offset by 1 so
+	       that we do not index outside of the array. */
+	    for( uchar index = 0; index < len - 1; index++ )
+	    {
+	      uchar *pCurrent = pdata + index;
+	      uchar *pNext = pdata + index + 1;
 
-      if(*pCurrent > *pNext)
-      {
-        swapFlag = true;
-        buffer = *pCurrent;
-        *pCurrent = *pNext;
-        *pNext = buffer;
-      }
-    }
-  }
-
+	      if( *pCurrent > *pNext )
+	      {
+	        swapFlag  = true;
+	        buffer    = *pCurrent;
+	        *pCurrent = *pNext;
+	        *pNext    = buffer;
+	      }
+	    }
+	  }
+	}
 }

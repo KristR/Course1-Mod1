@@ -50,7 +50,8 @@ void print_statistics(uchar med, uchar mean, uchar min, uchar max);
  * @brief Prints a given array to the terminal.
  *
  * Given a pointer to array's first element and the array length,
- * the array is displayed in the terminal.
+ * the array is displayed in the terminal with its elements numbered
+ * and formatted in four columns.
  *
  * @param pdata Pointer to the first element of an array.
  * @param len Unsigned 8-bit value - length of the array.
@@ -115,9 +116,7 @@ uchar find_minimum(uchar *pdata, uchar len);
  * @brief Sorts a given array into descending order.
  *
  * Given a pointer to the array's first element and the array lenght,
- * the array is sorted into descending order (The zeroth element being
- * the largest value, and the last element (n-1) being the smallest
- * value. )
+ * the array is sorted into descending order using 'bubble sort' algorithm.  
  *
  * @param pdata Pointer to the first element of an array.
  * @param len Unsigned 8-bit value - length of the array.
