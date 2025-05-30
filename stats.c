@@ -72,7 +72,7 @@ void print_statistics(uchar med, uchar mean, uchar min, uchar max)
   // Implementation goes here
 
   printf("\n==== Dataset statistics ====\n"
-  	"Median: %d\nMean: %d\nMinimum: %d\nMaximum: %d\n", med, mean, min, max);
+         "Median: %d\nMean: %d\nMinimum: %d\nMaximum: %d\n", med, mean, min, max);
 
 }
 
@@ -83,23 +83,23 @@ void print_array(uchar *pdata, uchar len)
   
   for(uchar i = 0; i < len; i++)
   {
-  	if( (i == 0) ||
-  		  (i % 4 == 0) )
-  	{
-    	printf("%d) %d", i+1, *(pdata+i));
-  	}
+    if( (i == 0) ||
+        (i % 4 == 0) )
+    {
+      printf("%d) %d", i+1, *(pdata+i));
+    }
     else
     {
-    	printf("\t\t%d) %d", i+1, *(pdata+i));
+      printf("\t\t%d) %d", i+1, *(pdata+i));
     }
 
     if((i + 1) % 4 == 0)
     {
-    	printf("\n");
+      printf("\n");
     }
   }
 
-	printf("\n");
+  printf("\n");
 }
 
 uchar find_median(uchar *pdata, uchar len)
@@ -151,7 +151,7 @@ uchar find_maximum(uchar *pdata, uchar len)
   {
     if(*(pdata+i) > result)
     {
-    	result = *(pdata+i);
+      result = *(pdata+i);
     }
   }
 
@@ -167,7 +167,7 @@ uchar find_minimum(uchar *pdata, uchar len)
   {
     if(*(pdata+i) < result)
     {
-    	result = *(pdata+i);
+      result = *(pdata+i);
     }
   }
 
