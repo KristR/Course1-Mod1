@@ -55,6 +55,12 @@ void main() {
 
   print_statistics(median, mean, min, max);
 
+  printf("\n==== Unsorted dataset ====\n");
+  print_array(test, SIZE);
+
+  sort_array(test, SIZE);
+  
+  printf("\n==== Sorted dataset ====\n");
   print_array(test, SIZE);
 
 }
@@ -65,7 +71,8 @@ void print_statistics(uchar med, uchar mean, uchar min, uchar max)
 {
   // Implementation goes here
 
-  printf("\nMedian: %d\nMean: %d\nMinimum: %d\nMaximum: %d\n", med, mean, min, max);
+  printf("\n==== Dataset statistics ====\n"
+  	"Median: %d\nMean: %d\nMinimum: %d\nMaximum: %d\n", med, mean, min, max);
 
 }
 
@@ -76,7 +83,16 @@ void print_array(uchar *pdata, uchar len)
   
   for(uchar i = 0; i < len; i++)
   {
-    printf("\t\t%d) %d", i+1, *(pdata+i));
+  	if( (i == 0) ||
+  		  (i % 4 == 0) )
+  	{
+    	printf("%d) %d", i+1, *(pdata+i));
+  	}
+    else
+    {
+    	printf("\t\t%d) %d", i+1, *(pdata+i));
+    }
+
     if((i + 1) % 4 == 0)
     {
     	printf("\n");
