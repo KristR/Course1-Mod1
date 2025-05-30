@@ -55,6 +55,8 @@ void main() {
 
   print_statistics(median, mean, min, max);
 
+  print_array(test, SIZE);
+
 }
 
 /* Add other Implementation File Code Here */
@@ -70,6 +72,18 @@ void print_statistics(uchar med, uchar mean, uchar min, uchar max)
 void print_array(uchar *pdata, uchar len)
 {
   // Implementation goes here
+
+  
+  for(uchar i = 0; i < len; i++)
+  {
+    printf("\t\t%d) %d", i+1, *(pdata+i));
+    if((i + 1) % 4 == 0)
+    {
+    	printf("\n");
+    }
+  }
+
+	printf("\n");
 }
 
 uchar find_median(uchar *pdata, uchar len)
@@ -84,11 +98,6 @@ uchar find_median(uchar *pdata, uchar len)
   }
 
   sort_array(medianArray, len);
-
-  //for(uchar i = 0; i < len; i++)
-  //{
-  //  printf("\n%d",medianArray[i]);
-  //}
 
   char middle;
 
