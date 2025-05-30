@@ -50,9 +50,10 @@ void main() {
 
   uchar median = find_median(test, SIZE);
   uchar mean = find_mean(test, SIZE);
+  uchar min = find_minimum(test, SIZE);
   uchar max = find_maximum(test, SIZE);
 
-  print_statistics(median, mean, 0, max);
+  print_statistics(median, mean, min, max);
 
 }
 
@@ -135,6 +136,17 @@ uchar find_maximum(uchar *pdata, uchar len)
 uchar find_minimum(uchar *pdata, uchar len)
 {
   // Implementation goes here
+  uchar result = *pdata; // Take the first array element for comparison
+
+  for(uchar i = 0; i < len; i++)
+  {
+    if(*(pdata+i) < result)
+    {
+    	result = *(pdata+i);
+    }
+  }
+
+  return result;
 }
 
 void sort_array(uchar *pdata, uchar len)
