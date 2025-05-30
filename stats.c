@@ -50,8 +50,9 @@ void main() {
 
   uchar median = find_median(test, SIZE);
   uchar mean = find_mean(test, SIZE);
+  uchar max = find_maximum(test, SIZE);
 
-  print_statistics(median, mean, 0, 0);
+  print_statistics(median, mean, 0, max);
 
 }
 
@@ -118,6 +119,17 @@ uchar find_mean(uchar *pdata, uchar len)
 uchar find_maximum(uchar *pdata, uchar len)
 {
   // Implementation goes here
+  uchar result = 0;
+
+  for(uchar i = 0; i < len; i++)
+  {
+    if(*(pdata+i) > result)
+    {
+    	result = *(pdata+i);
+    }
+  }
+
+  return result;
 }
 
 uchar find_minimum(uchar *pdata, uchar len)
@@ -142,13 +154,12 @@ void sort_array(uchar *pdata, uchar len)
 
       if(*pCurrent > *pNext)
       {
-          swapFlag = true;
-          buffer = *pCurrent;
-          *pCurrent = *pNext;
-          *pNext = buffer;
+        swapFlag = true;
+        buffer = *pCurrent;
+        *pCurrent = *pNext;
+        *pNext = buffer;
       }
     }
   }
 
 }
-
