@@ -49,8 +49,9 @@ void main() {
   /* Statistics and Printing Functions Go Here */
 
   uchar median = find_median(test, SIZE);
+  uchar mean = find_mean(test, SIZE);
 
-  print_statistics(median, 0, 0, 0);
+  print_statistics(median, mean, 0, 0);
 
 }
 
@@ -104,6 +105,14 @@ uchar find_median(uchar *pdata, uchar len)
 uchar find_mean(uchar *pdata, uchar len)
 {
   // Implementation goes here
+  uchar result;
+
+  for(uchar i = 0; i < len; i++)
+  {
+    result += *(pdata+i);
+  }
+
+  return result / len;
 }
 
 uchar find_maximum(uchar *pdata, uchar len)
