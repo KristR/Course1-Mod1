@@ -134,7 +134,7 @@ uchar find_mean(uchar *pdata, uint len)
 	if( (pdata != NULL) &&
 	    (len > 0) )
 	{
-	  uchar result;
+	  uint result = 0;
 
 	  for( uchar index = 0; index < len; index++ )
 	  {
